@@ -56,3 +56,12 @@ Then:
 $ make -j4
 $ make pycaffe
 ```
+
+Add the following lines to the end of .bashrc file
+
+	# NVIDIA Caffe
+	export NVCAFFE_HOME=~/nvcaffe 
+	export PYTHONPATH=$NVCAFFE_HOME/python:/usr/lib/python2.7/dist-packages:$PYTHONPATH python
+	export LD_LIBRARY_PATH=$NVCAFFE_HOME/build/lib:$LD_LIBRARY_PATH
+
+Make the module and run.
