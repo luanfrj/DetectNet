@@ -1,7 +1,7 @@
 
 CC = g++
 
-CXXFLAGS = -std=c++11 -DUSE_OPENCV
+CXXFLAGS = -std=c++11 -DUSE_OPENCV -DNO_NVML
 
 IFLAGS += `pkg-config opencv --cflags`
 LFLAGS += `pkg-config opencv --libs`
