@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		printf("Usage %s <image filename>\n", argv[0]);
+		printf("Usage %s <file filenames>\n", argv[0]);
 		return -1;
 	}
 
