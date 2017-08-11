@@ -45,17 +45,22 @@ int main(int argc, char **argv)
 		exit(printf("Failed to open the file %s\n", argv[1]));
 	}
 
+	// use the gpu and first device
+	int gpu = 1;
+	int device_id = 0;
+
+	// loads the detect net
+	// the network layers weights need to be loaded only once.
+	DetectNet detectNet(model_file, trained_file, gpu, device_id);
+
 	while(!feof(input_file))
 	{
-		int gpu = 1;
-		int device_id = 0;
+		
 		char input_file_name[FNAME_LENGTH];
 
 		// Read file name from input_file
 		fscanf(input_file, "%[^\n]\n", input_file_name);
 		printf("%s", input_file_name);
-		// loads the detect net
-		DetectNet detectNet(model_file, trained_file, gpu, device_id);
 		
 		cv::Mat img = cv::imread(input_file_name, -1);
 	
